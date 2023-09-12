@@ -1,4 +1,5 @@
-FROM node:16-bullseye
+FROM debian:stable-slim
+#FROM node:16-bullseye
 
 RUN apt-get update && \
     apt-get install \
