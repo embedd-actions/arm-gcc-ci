@@ -9,7 +9,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - /bin/bash
-    - -c
     - ${{ inputs.command }}
  
