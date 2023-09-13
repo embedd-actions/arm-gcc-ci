@@ -5,6 +5,7 @@ RUN apk update \
     apk add \
     gcc-arm-none-eabi \
     newlib-arm-none-eabi \
+    g++-arm-none-eabi \
     make \
     cmake \
     && \
