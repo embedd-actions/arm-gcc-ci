@@ -1,11 +1,13 @@
-FROM debian:stable-slim
-#FROM node:16-bullseye
+FROM alpine:latest
 
-RUN apt-get update && \
-    apt-get install \
+RUN apk update \
+    && \
+    apk add \
     gcc-arm-none-eabi \
-    -y && \
-    rm -rf /var/cache/apt
+    make \
+    cmake \
+    && \
+    apk cache clean
 
     
 
