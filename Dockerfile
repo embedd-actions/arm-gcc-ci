@@ -1,15 +1,10 @@
-FROM alpine:latest
+FROM debian:stable-slim
 
-RUN apk update \
-    && \
-    apk add \
+RUN apt-get update && \
+    apt-get install \
     gcc-arm-none-eabi \
-    newlib-arm-none-eabi \
-    g++-arm-none-eabi \
-    make \
-    cmake \
-    && \
-    apk cache clean
+    -y && \
+    rm -rf /var/cache/apt
 
     
 
