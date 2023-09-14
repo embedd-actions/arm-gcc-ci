@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
         
       - name: make   
-        uses: embedd-actions/arm-gcc-ci@v1 
+        uses: embedd-actions/arm-gcc-ci@v2 
         with: 
           command: make --directory Release all
 
