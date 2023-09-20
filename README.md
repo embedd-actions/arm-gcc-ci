@@ -1,4 +1,8 @@
-## Пример настройки CI/CD
+# arm-gcc-ci
+
+Building arm-gcc projects
+
+## Usage:
 
 ```
 
