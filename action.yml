@@ -1,5 +1,8 @@
 name: 'ARM GCC build'
-description: 'Building arm projects'
+description: 'Building arm-gcc projects'
+branding:
+  color: blue
+  icon: microchip
 inputs:
    command:
      description: 'Command'
