@@ -19,6 +19,7 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     cmake \
     wget \
     ca-certificates \
+    xz-utils \
     -y && \
     rm -rf /var/cache/apt && \
     mkdir /workdir && \
