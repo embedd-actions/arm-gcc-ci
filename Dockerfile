@@ -2,8 +2,6 @@ FROM debian:stable-slim
 
 ARG VERSION=12.3.rel1
 
-ENV ARCH_TAG="---"
-
 RUN ARCH="$(dpkg --print-architecture)" && \
     case $ARCH in \
     "amd64") \
@@ -30,9 +28,8 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     tar xvf arm-gnu-toolchain-${VERSION}-${ARCH_TAG}-arm-none-eabi.tar.xz && \
     #wget https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v${VERSION}/xpack-arm-none-eabi-gcc-${VERSION}-linux-${ARCH_TAG}.tar.gz && \
     #tar xvf xpack-arm-none-eabi-gcc-${VERSION}-linux-${ARCH_TAG}.tar.gz && \
-    rm arm-gnu-toolchain-${VERSION}-${ARCH_TAG}-arm-none-eabi.tar.xz
-    
-RUN echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc
+    rm arm-gnu-toolchain-${VERSION}-${ARCH_TAG}-arm-none-eabi.tar.xz && \
+    echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc
 
 ADD entrypoint.sh /entrypoint.sh
 
