@@ -30,7 +30,7 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     #tar xvf xpack-arm-none-eabi-gcc-${VERSION}-linux-${ARCH_TAG}.tar.gz && \
     rm arm-gnu-toolchain-${VERSION}-${ARCH_TAG}-arm-none-eabi.tar.xz
     
-RUN echo 'export PATH="/workdir/xarm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc
+RUN echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc
 
 ADD entrypoint.sh /entrypoint.sh
 
