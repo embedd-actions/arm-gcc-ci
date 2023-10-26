@@ -2,6 +2,8 @@ FROM debian:stable-slim
 
 ARG VERSION=12.3.rel1
 
+ENV ARCH_TAG="---"
+
 RUN ARCH="$(dpkg --print-architecture)" && \
     case $ARCH in \
     "amd64") \
