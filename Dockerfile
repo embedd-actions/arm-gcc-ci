@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-ARG VERSION=11.3.rel1
+ARG VERSION=12.3.rel1
 
 RUN ARCH="$(dpkg --print-architecture)" && \
     case $ARCH in \
