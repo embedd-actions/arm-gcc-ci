@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-ARG VERSION=12.3.rel1
+ARG VERSION=11.3.rel1
 
 RUN ARCH="$(dpkg --print-architecture)" && \
     case $ARCH in \
@@ -29,7 +29,10 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     #wget https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v${VERSION}/xpack-arm-none-eabi-gcc-${VERSION}-linux-${ARCH_TAG}.tar.gz && \
     #tar xvf xpack-arm-none-eabi-gcc-${VERSION}-linux-${ARCH_TAG}.tar.gz && \
     rm arm-gnu-toolchain-${VERSION}-${ARCH_TAG}-arm-none-eabi.tar.xz && \
-    echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc
+    echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc && \
+    apt-get remove ca-certificates xz-utils wget -y && \
+    apt autoremove -y && \
+    apt autoclean -y && \
 
 ADD entrypoint.sh /entrypoint.sh
 
