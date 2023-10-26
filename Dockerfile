@@ -32,7 +32,7 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     echo 'export PATH="/workdir/arm-gnu-toolchain-'${VERSION}'-'${ARCH_TAG}'-arm-none-eabi/bin:$PATH"' >> /etc/bashrc && \
     apt-get remove ca-certificates xz-utils wget -y && \
     apt autoremove -y && \
-    apt autoclean -y && \
+    apt autoclean -y
 
 ADD entrypoint.sh /entrypoint.sh
 
