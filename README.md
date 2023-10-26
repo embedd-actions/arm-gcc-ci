@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
         
       - name: make   
-        uses: embedd-actions/arm-gcc-ci@v12.3.1 
+        uses: embedd-actions/arm-gcc-ci@12.3.rel1
         with: 
           command: make --directory Release all
 
@@ -23,5 +23,6 @@ jobs:
 ## List of available tags
 
 ```
-v12.3.1
+11.3.rel1
+12.3.rel1
 ```
