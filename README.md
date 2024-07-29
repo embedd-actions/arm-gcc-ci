@@ -4,7 +4,7 @@ Building arm-gcc projects
 
 ## Usage:
 
-```
+```yml
 
 jobs:      
   build:
