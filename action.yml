@@ -10,7 +10,7 @@ inputs:
      default: arm-none-eabi-gcc --version
 runs:
   using: 'docker'
-  image: 'docker://sergeyladanov/arm-gcc:12.3.rel1-v1'
+  image: 'docker://sergeyladanov/arm-gcc:12.3.rel1-v2'
   args:
      - ${{ inputs.command }}
  
