@@ -18,6 +18,7 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     make \
     ninja-build \
     cmake \
+    git \
     wget \
     ca-certificates \
     xz-utils \
